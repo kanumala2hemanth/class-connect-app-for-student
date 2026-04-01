@@ -1,0 +1,65 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #070eef, #eb6e14);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  margin-top: 200px;
+}
+
+h1 {
+  color: #003366;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #0077b6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #005f8a;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  width: 70%;
+  margin-right: 10px;
+}
+
+.card {
+  margin-top: 20px;
+  text-align: left;
+  background: #f1faff;
+  padding: 20px;
+  border-radius: 10px;
+}
+.student-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}

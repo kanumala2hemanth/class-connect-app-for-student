@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Student Administration - Class Connect</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* small layout additions specific to the wizard */
+    .layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .field-list {
+      background: #fafcff;
+      border-radius: 8px;
+      padding: 12px;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .field-item {
+      padding: 8px;
+      margin-bottom: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .field-item:hover { background:#e6f2ff; }
+    .field-item.active { background:#cfeeff; font-weight:600; }
+    .step-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      min-height: 200px;
+    }
+    .controls { margin-top: 16px; display:flex; gap:10px; }
+    .small-btn { padding:8px 12px; border-radius:6px; border:none; cursor:pointer; }
+    .small-btn.secondary { background:#eee; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Class Connect: Student Administration</h1>
+
+    <div style="margin-bottom:16px;">
+      <input list="rollList" id="rollNo" placeholder="Select or enter Roll Number" />
+      <datalist id="rollList"></datalist>
+      <button onclick="selectStudent()">Load Student</button>
+      <button onclick="clearView()" class="secondary">Clear</button>
+    </div>
+
+    <div id="notfound" style="color:red;"></div>
+
+    <div id="wizard" style="display:none; margin-top:12px;">
+      <div class="layout">
+        <!-- left: clickable field list -->
+        <div class="field-list" id="fieldList"></div>
+
+        <!-- right: step content -->
+        <div>
+          <div class="step-card" id="stepCard">
+            <!-- content injected here -->
+          </div>
+
+          <div class="controls">
+            <button class="small-btn" id="prevBtn" onclick="prevField()">Previous</button>
+            <button class="small-btn" id="nextBtn" onclick="nextField()">Next</button>
+            <button class="small-btn secondary" onclick="showFullTimetable()">Show Full Timetable</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result" class="card" style="display:none; margin-top:18px;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
